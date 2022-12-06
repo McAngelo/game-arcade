@@ -4,12 +4,11 @@ let player = {
     paceMouth: 320,
     pacDir: 0,
     pSize: 32,
-    speed: 5
+    speed: 15
 };
 let score = 0;
 let gscore = 0;
 const canvas = document.createElement("canvasSpace");
-console.log(canvasSpace);
 let ctx = canvasSpace.getContext("2d");
 
 canvas.height = 400;
@@ -67,6 +66,7 @@ function move(key){
     if(player.y < 0){
         player.y = (canvas.height-32);
     }
+    player.paceMouth = (player.paceMouth == 320) ? 352 : 320;
     
     render();
 }
